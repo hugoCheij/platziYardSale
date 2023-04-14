@@ -61,6 +61,11 @@
             text-align: center;
         }
 
+        .formulario {
+            display: flex;
+            flex-direction: column;
+        }
+
         .label {
             font-size: var(--sm);
             font-weight: bold;
@@ -74,8 +79,31 @@
             height: 32px;
             font-size: var(--md);
             padding: 6px;
+            margin-bottom: 12px;
         }
 
+        .boton-primario {
+            background-color: var(--hospital-green);
+            border-radius: 8px;
+            border: none;
+            color: var(--white);
+            width: 100%;
+            height: 50px;
+            cursor: pointer;
+            font-size: var(--md);
+            font-weight: bold;
+        }
+
+        .boton-login {
+            margin-top: 14px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 640px) {
+            .logo {
+                display: block;
+            }
+        }
     </style>
 </head>
 
@@ -92,13 +120,13 @@
             </p>
         
             <form action="/" class="formulario">
-                <label for="contraseña" class="laber">Contraseña</label>
+                <label for="contraseña" class="label">Contraseña</label>
                 <input type="password" name="contraseña" id="contraseña" placeholder="*********" class="input input-contraseña">
         
                 <label for="nueva-contraseña" class="label">Contraseña</label>
                 <input type="password" name="contraseña" id="nueva-contraseña" placeholder="*********" class="input input-contraseña">
         
-                <input type="submit" value="confirm" class="boton-primario boton-login" name="" id="">
+                <input type="submit" value="Confirmar" class="boton-primario boton-login" name="" id="">
             </form>
             
         </div>
