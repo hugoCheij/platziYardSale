@@ -36,6 +36,7 @@
             display: grid;
             grid-template-rows: auto 1fr auto;
             width: 300px;
+            justify-items: center;
         }
 
         .logo {
@@ -60,25 +61,32 @@
             text-align: center;
         }
 
-        .formulario {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .label {
-            font-size: var(--sm);
-            font-weight: bold;
-            margin-bottom: 6px;
-        }
-
-        .input {
+        .imagen-email {
+            width: 132px;
+            height: 132px;
+            border-radius: 50%;
             background-color: var(--text-input-field);
-            border: none;
-            border-radius: 8px;
-            height: 32px;
-            font-size: var(--md);
-            padding: 6px;
-            margin-bottom: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .imagen-email img {
+            width: 80px;
+        }
+
+        .resend {
+            font-size: var(--sm);
+        }
+
+        .resend span {
+            color: var(--very-light-pink)
+        }
+
+        .resend a {
+            color: var(--hospital-green);
+            text-decoration: none;
         }
 
         .boton-primario {
@@ -108,21 +116,21 @@
 <body>
     <section class="login">
         <section class="contenedor-formulario">
-            <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo">
-            <h1 class="titulo">Create a new password</h1>
-            <p class="subtitulo">Enter a new password for your account</p>
-            <img src="/estilos/logos/logo_yard_sale.svg" class="logo" alt="logo">
+            <img src="./estilos/logos/logo_yard_sale.svg" alt="logo" class="logo">
+            <h1 class="titulo">Email has been sent!</h1>
+            <p class="subtitulo">Please check your inbox for instructions on how reset the password</p>
 
-            <form action="/" class="formulario">
-                <label for="password" class="label">Password</label>
-                <input type="password" id="password" placeholder="*********" class="input input-password">
-
-                <label for="new-password" class="label">Password</label>
-                <input type="password" id="new-password" placeholder="*********" class="input input-password">
-
-                <input type="submit" value="Confirm" class="boton-primario boton-login">
-            </form>
+            <section class="imagen-email">
+                <img src="./estilos/iconos/email.svg" alt="email">
+            </section>
             
+            <button class="boton-primario boton-login">
+                Login
+            </button>
+            <p class="resend">
+                <span>Didn't receive the email?</span>
+                <a href="/">Resend</a>
+            </p>
         </section>
 
     </section>
