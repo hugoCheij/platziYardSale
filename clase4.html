@@ -38,11 +38,10 @@
             width: 300px;
         }
 
-        .logo {
-            width: 150px;
-            margin-bottom: 50px;
-            justify-self: center;
-            display: none;
+        .titulo {
+            font-size: var(--lg);
+            margin-bottom: 36px;
+            text-align: flex-start;
         }
 
         .formulario {
@@ -50,17 +49,9 @@
             flex-direction: column;
         }
 
-        .formulario section {
+        .formulario section{
             display: flex;
             flex-direction: column;
-        }
-
-        .formulario a {
-            color: var(--hospital-green);
-            font-size: var(--sm);
-            text-align: center;
-            text-decoration: none;
-            margin-bottom: 54px;
         }
 
         .label {
@@ -79,7 +70,9 @@
             margin-bottom: 12px;
         }
 
-        .input-email {
+        .input-name,
+        .input-email,
+        .input-password {
             margin-bottom: 22px;
         }
 
@@ -95,28 +88,12 @@
             height: 50px;
         }
 
-        .boton-secundario {
-            background-color: var(--white);
-            border-radius: 8px;
-            border: 1px solid var(--hospital-green);
-            color: var(--hospital-green);
-            width: 100%;
-            cursor: pointer;
-            font-size: var(--md);
-            font-weight: bold;
-            height: 50px;
-        }
-
         .boton-login {
             margin-top: 14px;
-            margin-bottom: 22px;
+            margin-bottom: 30px;
         }
 
         @media (max-width: 640px) {
-            .logo {
-                display: block;
-            }
-
             .contenedor-formulario {
                 height: 100%;
             }
@@ -125,29 +102,29 @@
                 height: 100%;
                 justify-content: space-between;
             }
+
         }
     </style>
 </head>
 <body>
     <section class="login">
         <section class="contenedor-formulario">
-            <img src="./estilos/logos/logo_yard_sale.svg" alt="logo" class="logo">
+            <h1 class="titulo">My account</h1>
 
             <form action="/" class="formulario">
                 <section>
-                    <label for="email" class="label">Email address</label>
+                    <label for="name" class="label">Name</label>
+                    <input type="text" id="name" placeholder="suNombre" class="input input-name">
+    
+                    <label for="email" class="label">Email</label>
                     <input type="email" id="email" placeholder="account@example.com" class="input input-email">
     
                     <label for="password" class="label">Password</label>
                     <input type="password" id="password" placeholder="*********" class="input input-password">
-
-                    <input type="submit" value="Log in" class="boton-primario boton-login">
-                    <a href="/">Forgot my password</a>
                 </section>
-
+        
+                <input type="submit" value="Create" class="boton-primario boton-login">
             </form>
-
-            <button class="boton-secundario boton-signup">Sign up</button>
             
         </section>
 
