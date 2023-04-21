@@ -29,6 +29,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, 240px);
             gap: 26px;
+            place-content: center;
         }
 
         .card-product {
@@ -44,8 +45,10 @@
 
         .info-product {
             display: flex;
+            width: inherit;
             justify-content: space-between;
             align-items: center;
+            margin-top: 12px;
 
         }
 
@@ -56,6 +59,20 @@
 
         .info-product figure {
             margin: 0;
+        }
+
+        .info-product section p:nth-child(1) {
+            font-weight: bold;
+            font-size: var(--md);
+            margin-top: 0;
+            margin-bottom: 4px;
+        }
+
+        .info-product section p:nth-child(2) {
+            font-size: var(--sm);
+            margin-top: 0;
+            margin-bottom: 0;
+            color: var(--very-light-pink);
         }
 
         @media (max-width: 640px) {
@@ -72,7 +89,10 @@
             .card-product img {
             width: 140px;
             height: 140px;
+            }
 
+            .info-product {
+                width: 140px;
             }
         }
 
