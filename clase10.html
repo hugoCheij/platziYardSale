@@ -42,11 +42,11 @@
 
         .my-order-container {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: auto 1fr auto;
             width: 300px;
-            border-radius: 8px;
-            background-color: var(--text-input-field);
-            margin-bottom: 18px;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 12px;
         }
 
         .my-order-container p {
@@ -78,14 +78,44 @@
   </head>
     <body>
         <section class="my-order">
-            <h1 class="title">My order</h1>
+            <h1 class="title">My orders</h1>
             <section class="my-order-container">
                 <section class="my-order-content">
                     <span>24.04.2023</span>
                     <span>6 articles</span>
                 </section>
                 <p>Monto $</p>
+                <img src="./estilos/iconos/flechita.svg" alt="flechita">
             </section>
+
+            <section class="my-order-container">
+                <section class="my-order-content">
+                    <span>24.04.2023</span>
+                    <span>6 articles</span>
+                </section>
+                <p>Monto $</p>
+                <img src="./estilos/iconos/flechita.svg" alt="flechita">
+            </section>
+
+            <section class="my-order-container">
+                <section class="my-order-content">
+                    <span>24.04.2023</span>
+                    <span>6 articles</span>
+                </section>
+                <p>Monto $</p>
+                <img src="./estilos/iconos/flechita.svg" alt="flechita">
+            </section>
+
+            <section class="my-order-container">
+                <section class="my-order-content">
+                    <span>24.04.2023</span>
+                    <span>6 articles</span>
+                </section>
+                <p>Monto $</p>
+                <img src="./estilos/iconos/flechita.svg" alt="flechita">
+            </section>
+
+
 
         </section> 
     </body>
