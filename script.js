@@ -4,5 +4,5 @@ const menuEscritorio = document.querySelector('.menu-escritorio');
 menuEmail.addEventListener('click', cambiarMenuEscritorio);
 
 function cambiarMenuEscritorio() {
-    menuEscritorio.classList.remove('inactive');
+    menuEscritorio.classList.toggle('inactive');
 }
