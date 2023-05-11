@@ -1,14 +1,17 @@
 const menuEmail = document.querySelector('.navbar-email');
 const menuEscritorio = document.querySelector('.menu-escritorio');
 const iconoMenuMovil = document.querySelector('.menu');
+const productDetailClose = document.querySelector('.product-detail-close')
 const menuMovil = document.querySelector('.menu-movil');
 const iconoMenuCarrito = document.querySelector('.navbar-shopping-card');
 const shoppingCartContainer = document.querySelector('#ShoppingCartContainer');
 const cardsContainer = document.querySelector('.cards-container');
+const productDetailContainer = document.querySelector('#productDetail');
 
 menuEmail.addEventListener('click', cambiarMenuEscritorio);
 iconoMenuMovil.addEventListener('click', cambiarMenuMovil);
 iconoMenuCarrito.addEventListener('click', cambiarCarritoAside);
+productDetailClose.addEventListener('click', cerrarDetalleProducto);
 
 function cambiarMenuEscritorio() {
     const carritoCerrado = shoppingCartContainer.classList.contains('inactive');
@@ -27,6 +30,8 @@ function cambiarMenuMovil() {
         shoppingCartContainer.classList.add('inactive');
     }
 
+    cerrarDetalleProducto();
+
     menuMovil.classList.toggle('inactive');
 }
 
@@ -42,8 +47,23 @@ function cambiarCarritoAside() {
         menuMovil.classList.add('inactive');
     }
 
+    const detalleProductoCerrado = productDetailContainer.classList.contains('inactive');
+
+    if (!detalleProductoCerrado){
+        productDetailContainer.classList.add('inactive'); 
+    }
+
     shoppingCartContainer.classList.toggle('inactive');
     
+}
+
+function abrirDetalleProducto(){
+    shoppingCartContainer.classList.add('inactive');
+    productDetailContainer.classList.remove('inactive');
+};
+
+function cerrarDetalleProducto(){
+    productDetailContainer.classList.add('inactive');
 }
 
 const listaProductos = [];
@@ -73,6 +93,7 @@ function crearArticulos(arr) {
     
         const productImg = document.createElement('img');
         productImg.setAttribute('src', producto.imagen);
+        productImg.addEventListener('click', abrirDetalleProducto)
     
         const productInfo = document.createElement('section');
         productInfo.classList.add('info-product');
